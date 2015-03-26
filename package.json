@@ -1,0 +1,22 @@
+{
+  "name": "winston-eventstore",
+  "version": "0.0.0",
+  "description": "An eventstore trasport for winston",
+  "main": "index.js",
+  "homepage": "https://github.com/FutureAdLabs/winston-eventstore",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/FutureAdLabs/winston-eventstore.git"
+  },
+  "keywords": [
+    "winston",
+    "logging",
+    "eventstore"
+  ],
+  "author": "Andrea Simonetti <andrea.simonetti@adludio.com>",
+  "license": "Apache-2",
+  "dependencies": {
+    "winston": "^0.9.0",
+    "nodejs-Eventstore": "git+https://github.com/FutureAdLabs/nodejs-EventStore.git#HEAD"
+  }
+}
