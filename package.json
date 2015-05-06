@@ -1,5 +1,5 @@
 {
-  "name": "winston-eventstore",
+  "name": "@adludio/winston-eventstore",
   "version": "0.0.0",
   "description": "An eventstore trasport for winston",
   "main": "index.js",
