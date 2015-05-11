@@ -1,6 +1,6 @@
 {
   "name": "@adludio/winston-eventstore",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "An eventstore trasport for winston",
   "main": "index.js",
   "homepage": "https://github.com/FutureAdLabs/winston-eventstore",
