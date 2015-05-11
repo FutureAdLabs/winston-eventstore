@@ -44,12 +44,20 @@ Eventstore.prototype.connectToEventStore = function connectToEventStore(){
   var self = this;
   this.connection = EventStore.connect(this.options.host, this.options.port);
   this.connection._socket.on('error', function (err) {
+    self.connection._socket.destroy();
+    console.log("Error: " + err.message + " DESTROY SOCKET AND OPEN A NEW ONE!");
     setTimeout(function () {
       self.connectToEventStore();
     }, 2000);
   });
   this.connection._socket.on('end', function () {
+    self.connection._socket.end();
+    console.log('Disconnected lost connection');
     self.connectToEventStore();
+  });
+  // If you're also serving http, display a 503 error.
+  this.connection._socket.on('close', function () {
+    console.log('Socket Closed!');
   });
   //we don't need to wait for this!
   this.connection.pCreateEvent('$$' + this.options.streamName, "$metadata", this.options.metadata);
